@@ -75,7 +75,7 @@ while (fs.Position < fs.Length)
         {
             var date = DateTimeOffset.FromFileTime(BitConverter.ToInt64(fileTime, 0));
             slides++;
-            Console.WriteLine($"Timestamp {slides}: " + date.ToString("yyyy-MM-dd HH:mm:ss") + "Z [Epoch: " + date.ToUnixTimeSeconds() + "s]");
+            Console.WriteLine("Timestamp "+  slides.ToString().PadLeft(3, ' ') + " : " + date.ToString("yyyy-MM-dd HH:mm:ss") + "Z [Epoch: " + date.ToUnixTimeSeconds() + "s]");
         }
         catch (ArgumentOutOfRangeException)
         {
